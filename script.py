@@ -1,17 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-@ author: Abhijeet
-"""
-
 import os
 import cv2
 import numpy as np
 from glob import glob
 
 def create_dir(path):
-    
     try:
         if not os.path.exists(path):
             os.makedirs(path)
@@ -19,6 +11,7 @@ def create_dir(path):
     except OSError:
         print(f"ERROR: creating directory with name {path}")
 
+        
 def save_frame(video_path, save_dir, gap=5):
     
     name = video_path.split("/")[-1].split(".")[0]
@@ -47,8 +40,7 @@ def save_frame(video_path, save_dir, gap=5):
     
 
 if __name__ == "__main__":
-    video_paths = glob("videos/*")
+    video_paths = glob("Downloads/*")
     save_dir = "Images"
     for path in video_paths:
         save_frame(path, save_dir, gap=5)
-
